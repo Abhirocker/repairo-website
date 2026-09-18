@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Repairo technician portal — sign in to manage live bookings.">
+<title>Technician Portal | Repairo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topbar">REPAIRO · PREMIUM PHONE REPAIR COMPONENTS · ACADEMIC PRODUCT PROTOTYPE</div>
+<header class="navbar">
+  <a class="logo" href="index.html"><span class="logo-box">R</span><span>repairo<span class="lime">.</span></span></a>
+  <nav id="nav">
+    <a href="index.html#products">Products</a>
+    <a href="components.html">Components & booking</a>
+    <a href="diagnose.html">Diagnose device</a>
+    <a href="customer.html">Customer</a>
+    <a href="technician.html">Technician</a>
+  </nav>
+  <div class="nav-actions"><a class="nav-login" href="customer.html">Sign in</a><a class="nav-button" href="technician.html">Join as technician <b>→</b></a></div>
+  <button class="hamburger" id="hamburger">☰</button>
+</header>
+<main>
+  <section class="inner-hero">
+    <div class="eyebrow">TECHNICIAN PORTAL</div>
+    <h1>A smarter dashboard for<br><span>better repairs.</span></h1>
+    <p>Sign in to see real bookings made through the site and update their status — customers see the update instantly on the tracking page.</p>
+  </section>
+  <section class="section">
+    <div class="page-grid">
+      <div class="panel">
+        <div class="role-tabs"><button class="role-tab active">Technician</button><button class="role-tab" onclick="location.href='customer.html'">Customer</button></div>
+        <div class="eyebrow">PARTNER SIGN IN</div>
+        <h3>Access your workshop</h3>
+        <form id="tech-login" class="form-grid">
+          <div class="field full"><label>EMAIL</label><input id="tech-email" type="email" required placeholder="you@example.com"></div>
+          <div class="field full"><label>PASSWORD</label><input id="tech-password" type="password" required placeholder="Enter password"></div>
+          <button class="submit field full" type="submit">Open technician dashboard →</button>
+        </form>
+        <div id="tech-result" class="result-box"></div>
+        <small class="note">First time? Create your sign-in in Firebase Console → Authentication (SETUP_GUIDE.md → Part 5). Without Firebase connected, this opens a local demo session on this device.</small>
+      </div>
+      <div class="dashboard">
+        <div class="dash-nav"><b>repairo<span class="lime">.</span> partner</b><span class="avatar">AS</span></div>
+        <div class="dash-welcome"><small>DEMO DASHBOARD</small><h3>Good morning, Arjun</h3></div>
+        <div class="dash-cards"><div><small>ORDERS</small><strong>24</strong><em>↑ 18%</em></div><div><small>POINTS</small><strong>1,850</strong><em>650 to reward</em></div><div><small>CLAIMS</small><strong>02</strong><em>1 awaiting review</em></div></div>
+        <div class="recent"><div><span class="green"></span><b>Order REP-1048</b><span>₹12,450</span></div><small>6 premium displays · Delivered in 36 hrs</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="admin-orders-section" style="display:none;padding-top:0">
+    <div class="section-heading">
+      <div><div class="eyebrow">LIVE · SIGNED IN</div><h2>Incoming<br><span>bookings.</span></h2></div>
+      <p id="admin-mode-label">Real bookings made through the site.</p>
+    </div>
+    <div class="admin-toolbar">
+      <button class="button light" id="admin-refresh" type="button">Refresh ↻</button>
+      <button class="button light" id="admin-signout" type="button">Sign out</button>
+    </div>
+    <div id="admin-orders-list" class="admin-orders-list"></div>
+  </section>
+
+  <section class="section" style="padding-top:20px">
+    <div class="info-cards">
+      <div class="info-card"><b>Source faster</b><p>Browse core screens, batteries and charging components through a B2B catalogue concept.</p></div>
+      <div class="info-card"><b>Earn more</b><p>Tiered commissions, volume bonuses and Repairo points are part of the proposed CRM strategy.</p></div>
+      <div class="info-card"><b>Build trust</b><p>Training, certification, authentication and warranty support strengthen the technician-customer relationship.</p></div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand"><span class="logo-box">R</span><strong>repairo<span class="lime">.</span></strong><p>Premium phone repair components.<br>Built for India's repair ecosystem.</p></div>
+    <div class="footer-column"><b>EXPLORE</b><a href="components.html">Components & pricing</a><a href="diagnose.html">Diagnose device</a><a href="warranty.html">Quality & Warranty</a></div>
+    <div class="footer-column"><b>ACCOUNT</b><a href="customer.html">Customer sign in</a><a href="technician.html">Technician portal</a><a href="track.html">Track repair</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Repairo · Academic product prototype</span><span>Marketing Management · IIM Sambalpur</span></div>
+</footer>
+<script src="script.js"></script>
+<script src="config.js"></script>
+<script src="catalog-data.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-auth-compat.js"></script>
+<script src="store.js"></script>
+<script src="notify.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

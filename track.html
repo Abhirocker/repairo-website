@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Track your Repairo repair status in real time.">
+<title>Track Repair | Repairo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topbar">REPAIRO · PREMIUM PHONE REPAIR COMPONENTS · ACADEMIC PRODUCT PROTOTYPE</div>
+<header class="navbar">
+  <a class="logo" href="index.html"><span class="logo-box">R</span><span>repairo<span class="lime">.</span></span></a>
+  <nav id="nav">
+    <a href="index.html#products">Products</a>
+    <a href="components.html">Components & booking</a>
+    <a href="diagnose.html">Diagnose device</a>
+    <a href="customer.html">Customer</a>
+    <a href="technician.html">Technician</a>
+    <a href="warranty.html">Warranty</a>
+  </nav>
+  <div class="nav-actions"><a class="nav-login" href="customer.html">Sign in</a><a class="nav-button" href="technician.html">Join as technician <b>→</b></a></div>
+  <button class="hamburger" id="hamburger">☰</button>
+</header>
+<main>
+  <section class="inner-hero">
+    <div class="eyebrow">REPAIR TRACKING</div>
+    <h1>Know where your repair<br><span>stands.</span></h1>
+    <p>Enter your Order ID and the mobile number you booked with to see live status — pending, confirmed, in progress or completed.</p>
+  </section>
+  <section class="section">
+    <div class="page-grid">
+      <div class="panel">
+        <div class="eyebrow">TRACK A REPAIR</div>
+        <h3>Enter your order details</h3>
+        <form id="track-form" class="form-grid">
+          <div class="field full"><label>ORDER ID</label><input id="track-id" required placeholder="REP-XXXXXX"></div>
+          <div class="field full"><label>MOBILE NUMBER USED AT BOOKING</label><input id="track-phone" required placeholder="98765 43210"></div>
+          <button class="submit field full" style="margin-top:2px" type="submit">Track repair →</button>
+        </form>
+        <div id="track-result" class="result-box"></div>
+      </div>
+
+      <div class="panel" id="track-panel-default">
+        <div class="eyebrow">WHAT YOU'LL SEE</div>
+        <h3>Every repair, one clear status</h3>
+        <div class="service-list">
+          <div class="service-item"><b>Pending</b><span>Booking received</span></div>
+          <div class="service-item"><b>Confirmed</b><span>Payment & parts confirmed</span></div>
+          <div class="service-item"><b>In progress</b><span>Technician is working on it</span></div>
+          <div class="service-item"><b>Completed</b><span>Ready / delivered</span></div>
+        </div>
+        <small class="note">Booked through this site? Your Order ID (e.g. REP-K7X2QP) was shown right after checkout and sent to your email.</small>
+      </div>
+
+      <div class="panel hidden" id="track-panel-result">
+        <div class="eyebrow" id="track-order-heading">ORDER</div>
+        <h3 id="track-device-line">Device</h3>
+        <span class="status-badge" id="track-status-badge">Pending</span>
+        <div class="timeline" id="track-timeline" style="margin-top:20px"></div>
+        <div class="service-list" id="track-items" style="margin-top:15px"></div>
+        <div class="summary-total-row"><span>Total</span><strong id="track-total"></strong></div>
+        <div class="summary-total-row"><span>Payment</span><strong id="track-payment"></strong></div>
+        <button class="button light" id="track-whatsapp" type="button" style="margin-top:15px">Message us about this order</button>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand"><span class="logo-box">R</span><strong>repairo<span class="lime">.</span></strong><p>Premium phone repair components.<br>Built for India's repair ecosystem.</p></div>
+    <div class="footer-column"><b>EXPLORE</b><a href="components.html">Components & pricing</a><a href="diagnose.html">Diagnose device</a><a href="warranty.html">Quality & Warranty</a></div>
+    <div class="footer-column"><b>ACCOUNT</b><a href="customer.html">Customer sign in</a><a href="technician.html">Technician portal</a><a href="track.html">Track repair</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Repairo · Academic product prototype</span><span>Marketing Management · IIM Sambalpur</span></div>
+</footer>
+<script src="script.js"></script>
+<script src="config.js"></script>
+<script src="catalog-data.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore-compat.js"></script>
+<script src="store.js"></script>
+<script src="notify.js"></script>
+<script src="track.js"></script>
+</body>
+</html>

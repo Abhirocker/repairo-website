@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Book a Repairo repair — confirm your parts and pay by UPI, card or after service.">
+<title>Book a Repair | Repairo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topbar">REPAIRO · PREMIUM PHONE REPAIR COMPONENTS · ACADEMIC PRODUCT PROTOTYPE</div>
+
+<header class="navbar">
+  <a class="logo" href="index.html"><span class="logo-box">R</span><span>repairo<span class="lime">.</span></span></a>
+  <nav id="nav">
+    <a href="index.html#products">Products</a>
+    <a href="components.html">Components & booking</a>
+    <a href="diagnose.html">Diagnose device</a>
+    <a href="customer.html">Customer</a>
+    <a href="technician.html">Technician</a>
+  </nav>
+  <div class="nav-actions"><a class="nav-login" href="track.html">Track order</a><a class="nav-button" href="components.html">Edit cart <b>→</b></a></div>
+  <button class="hamburger" id="hamburger">☰</button>
+</header>
+
+<main>
+  <section class="inner-hero">
+    <div class="eyebrow">BOOK A REPAIR</div>
+    <h1>Confirm your parts,<br><span>book the visit.</span></h1>
+    <p>Fill in your details, choose how you'd like to pay, and we'll confirm your booking by email and WhatsApp.</p>
+  </section>
+
+  <section class="section" id="checkout-live">
+    <div class="page-grid">
+      <div class="panel">
+        <div class="eyebrow">YOUR DETAILS</div>
+        <h3>Booking information</h3>
+        <form id="checkout-form" class="form-grid">
+          <div class="field"><label>FULL NAME</label><input name="name" required placeholder="Your name"></div>
+          <div class="field"><label>MOBILE NUMBER</label><input name="phone" required placeholder="98765 43210"></div>
+          <div class="field full"><label>EMAIL (for your confirmation)</label><input type="email" name="email" required placeholder="you@example.com"></div>
+          <div class="field"><label>DEVICE BRAND</label><input name="deviceBrand" placeholder="e.g. Apple, Samsung"></div>
+          <div class="field"><label>DEVICE MODEL</label><input name="deviceModel" placeholder="e.g. iPhone 13"></div>
+          <div class="field full"><label>CITY</label><input name="city" required placeholder="City / area"></div>
+          <div class="field full"><label>ANYTHING THE TECHNICIAN SHOULD KNOW</label><input name="notes" placeholder="Optional"></div>
+
+          <div class="field full">
+            <label>PAYMENT METHOD</label>
+            <div class="pay-tabs" id="pay-tabs">
+              <button type="button" class="pay-tab active" data-method="upi">UPI / QR</button>
+              <button type="button" class="pay-tab" data-method="razorpay">Card · Netbanking · Wallet</button>
+              <button type="button" class="pay-tab" data-method="cod">Pay after service</button>
+            </div>
+          </div>
+
+          <div class="field full pay-panel" id="pay-upi">
+            <div class="upi-box">
+              <img id="upi-qr" alt="Scan to pay via UPI" width="180" height="180">
+              <div class="upi-box-info">
+                <p>Scan with any UPI app (GPay, PhonePe, Paytm, BHIM…), or pay directly to:</p>
+                <div class="upi-id-row"><code id="upi-id-text">yourshop@upi</code><button type="button" id="copy-upi">Copy</button></div>
+                <a class="button light" id="upi-app-link" href="#" target="_blank" rel="noopener">Open in UPI app →</a>
+                <label class="confirm-check"><input type="checkbox" id="upi-confirm-check"> I've completed the UPI payment for this order</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="field full pay-panel hidden" id="pay-razorpay">
+            <p class="pay-note">Opens Razorpay's secure checkout — pay by card, netbanking, wallet or UPI, all in one place.</p>
+            <div id="razorpay-container"></div>
+          </div>
+
+          <div class="field full pay-panel hidden" id="pay-cod">
+            <p class="pay-note">Pay the technician directly once your repair is complete and you're happy with it. No online payment needed to confirm this booking.</p>
+          </div>
+
+          <div id="checkout-error" class="result-box"></div>
+          <button class="submit field full" type="submit" id="checkout-submit">Confirm booking →</button>
+        </form>
+      </div>
+
+      <div class="panel">
+        <div class="eyebrow">ORDER SUMMARY</div>
+        <h3>Your cart</h3>
+        <div id="summary-lines"></div>
+        <div class="summary-total-row"><span>Total due</span><strong id="summary-total">₹0</strong></div>
+        <a class="back-link" href="components.html">← Edit cart</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hidden" id="checkout-success">
+    <div class="panel success-panel">
+      <div class="eyebrow">✓ BOOKING CONFIRMED</div>
+      <h2 id="success-order-id">REP-XXXXXX</h2>
+      <p>Save this order ID — you'll need it to track your repair. A confirmation has been sent to your email.</p>
+      <div class="success-actions">
+        <a class="button dark" id="success-track-link" href="track.html">Track this order <b>→</b></a>
+        <button class="button light" id="success-whatsapp" type="button">Message us on WhatsApp</button>
+      </div>
+      <div id="success-note" class="result-box"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand"><span class="logo-box">R</span><strong>repairo<span class="lime">.</span></strong><p>Premium phone repair components.<br>Built for India's repair ecosystem.</p></div>
+    <div class="footer-column"><b>EXPLORE</b><a href="components.html">Components & pricing</a><a href="diagnose.html">Diagnose device</a><a href="warranty.html">Quality & Warranty</a></div>
+    <div class="footer-column"><b>ACCOUNT</b><a href="customer.html">Customer sign in</a><a href="technician.html">Technician portal</a><a href="track.html">Track repair</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Repairo · Academic product prototype</span><span>Marketing Management · IIM Sambalpur</span></div>
+</footer>
+
+<script src="script.js"></script>
+<script src="config.js"></script>
+<script src="catalog-data.js"></script>
+<script src="cart.js"></script>
+<script src="payments.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore-compat.js"></script>
+<script src="store.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="notify.js"></script>
+<script src="checkout.js"></script>
+</body>
+</html>

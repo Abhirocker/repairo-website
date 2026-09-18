@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Repairo components catalogue — real Original and Duplicate pricing for every part.">
+<title>Components & Pricing | Repairo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topbar">REPAIRO · PREMIUM PHONE REPAIR COMPONENTS · ACADEMIC PRODUCT PROTOTYPE</div>
+
+<header class="navbar">
+  <a class="logo" href="index.html"><span class="logo-box">R</span><span>repairo<span class="lime">.</span></span></a>
+  <nav id="nav">
+    <a href="index.html#products">Products</a>
+    <a href="components.html" class="nav-current">Components & booking</a>
+    <a href="diagnose.html">Diagnose device</a>
+    <a href="customer.html">Customer</a>
+    <a href="technician.html">Technician</a>
+    <a href="warranty.html">Warranty</a>
+  </nav>
+  <div class="nav-actions">
+    <a class="nav-login" href="track.html">Track order</a>
+    <a class="nav-button" href="checkout.html">Book now <b>→</b></a>
+  </div>
+  <button class="hamburger" id="hamburger">☰</button>
+</header>
+
+<main>
+  <section class="inner-hero">
+    <div class="eyebrow">THE COMPONENTS</div>
+    <h1>Real parts.<br><span>Real prices.</span></h1>
+    <p>Every listing shows two honest options: an <strong>Original / OEM-grade</strong> component with the longer warranty, and a quality-checked <strong>Duplicate / compatible</strong> component at a lower price. Pick what fits the repair and the budget, then book a technician visit straight from your cart.</p>
+  </section>
+
+  <section class="section catalog-section">
+    <div class="catalog-tabs" id="catalog-tabs"></div>
+    <div class="catalog-grid" id="catalog-grid"></div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="tier-legend">
+      <div><b>✓ Original</b><span>OEM-grade or genuine-pull component. Longest warranty, closest to factory feel.</span></div>
+      <div><b>Duplicate</b><span>Quality-checked compatible component. Shorter warranty, lower price — a fair budget option, not a street "first copy".</span></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand"><span class="logo-box">R</span><strong>repairo<span class="lime">.</span></strong><p>Premium phone repair components.<br>Built for India's repair ecosystem.</p></div>
+    <div class="footer-column"><b>EXPLORE</b><a href="components.html">Components & pricing</a><a href="diagnose.html">Diagnose device</a><a href="warranty.html">Quality & Warranty</a></div>
+    <div class="footer-column"><b>ACCOUNT</b><a href="customer.html">Customer sign in</a><a href="technician.html">Technician portal</a><a href="track.html">Track repair</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Repairo · Academic product prototype</span><span>Marketing Management · IIM Sambalpur</span></div>
+</footer>
+
+<!-- Cart -->
+<button class="cart-fab" id="cart-fab">🛒<span class="cart-fab-count" id="cart-fab-count">0</span></button>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-drawer-head"><b>Your cart</b><button id="cart-drawer-close">×</button></div>
+  <div class="cart-lines" id="cart-lines"></div>
+  <div class="cart-drawer-foot">
+    <div class="cart-total-row"><span>Total</span><strong id="cart-total-amount">₹0</strong></div>
+    <a class="button dark cart-checkout-link" href="checkout.html" id="checkout-link">Proceed to booking <b>→</b></a>
+  </div>
+</div>
+<div class="cart-backdrop" id="cart-backdrop"></div>
+
+<script src="script.js"></script>
+<script src="config.js"></script>
+<script src="catalog-data.js"></script>
+<script src="cart.js"></script>
+<script src="catalog.js"></script>
+</body>
+</html>
